@@ -2,7 +2,7 @@ package com.yash.mavendemo.configuration;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-public class MavenDemoInitilizer extends AbstractAnnotationConfigDispatcherServletInitializer {
+public class MavenDemoInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
