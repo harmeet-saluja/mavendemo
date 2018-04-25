@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 
 import com.yash.mavendemo.dao.UserDAO;
 import com.yash.mavendemo.model.User;
-import com.yash.mavendemo.util.DBUtil;
+import com.yash.mavendemo.util.DBUtilJndi;
 
 @Repository
 public class UserDAOImpl implements UserDAO {
@@ -19,7 +19,7 @@ public class UserDAOImpl implements UserDAO {
 	Logger logger = Logger.getLogger(this.getClass().getName());
 
 	public boolean saveUser(User user) {
-		PreparedStatement pstmt = DBUtil.getPreparedStatement("INSERT INTO users(name,email) VALUES (?,?)");
+		PreparedStatement pstmt = DBUtilJndi.getPreparedStatement("INSERT INTO users(name,email) VALUES (?,?)");
 		logger.info("PreparedStatment created.");
 		int result = 0;
 		try {
@@ -27,7 +27,7 @@ public class UserDAOImpl implements UserDAO {
 			pstmt.setString(2, user.getEmail());
 			result = pstmt.executeUpdate();
 			logger.info("User saved successfully.");
-			DBUtil.close();
+			DBUtilJndi.close();
 		} catch (SQLException e) {
 			logger.error(e.getMessage());
 		}
@@ -35,7 +35,7 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	public List<User> listUsers() {
-		PreparedStatement pstmt = DBUtil.getPreparedStatement("SELECT * FROM users");
+		PreparedStatement pstmt = DBUtilJndi.getPreparedStatement("SELECT * FROM users");
 		logger.info("PreparedStatemenet created");
 		List<User> userList = new ArrayList<>();
 		User user = null;
@@ -50,7 +50,7 @@ public class UserDAOImpl implements UserDAO {
 		} catch (SQLException e) {
 			logger.error(e.getMessage());
 		} finally {
-			DBUtil.close();
+			DBUtilJndi.close();
 		}
 		return userList;
 	}
