@@ -17,4 +17,4 @@
 
 # IMAGES
 
-(./images/USECASE.png)
+(../images/USECASE.png)
