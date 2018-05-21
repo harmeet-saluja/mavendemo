@@ -17,4 +17,4 @@
 
 # IMAGES
 
-(../images/USECASE.png)
+(https://github.com/harmeet-saluja/mavendemo/blob/master/images/USECASE.png)
