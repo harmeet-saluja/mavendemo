@@ -7,5 +7,5 @@
 **Mavendemo App**
 
 1. First Item
-   *First SubItem
-   *Second SubItem
+   * First SubItem
+   * Second SubItem
