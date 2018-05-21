@@ -15,6 +15,6 @@
 - [ ] Open a pull request
 
 
-#IMAGES
+# IMAGES
 
-(images/USECASE.png)
+(/images/USECASE.png)
